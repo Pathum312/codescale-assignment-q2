@@ -1,0 +1,46 @@
+{
+  "name": "codescale-assignment-q2",
+  "version": "1.0.0",
+  "description": "Assignment Q2 - Node JS Backend Server",
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon server.ts",
+    "prod": "ts-node server.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pathum312/codescale-assignment-q2.git"
+  },
+  "keywords": [
+    "NodeJs",
+    "ExpressJs",
+    "MongoDB",
+    "Google",
+    "Cloud",
+    "Oracle",
+    "Cloud",
+    "Swagger",
+    "Postman"
+  ],
+  "author": "Pathum Senanayake",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Pathum312/codescale-assignment-q2/issues"
+  },
+  "homepage": "https://github.com/Pathum312/codescale-assignment-q2#readme",
+  "dependencies": {
+    "body-parser": "^1.20.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "mongoose": "^8.12.1"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.0",
+    "nodemon": "^3.1.9",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.2"
+  }
+}

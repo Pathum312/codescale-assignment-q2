@@ -1,4 +1,4 @@
 import ENV from "./env";
-import { User, Location, Database } from "./database";
+import { User, Location, Weather, Database } from "./database";
 
-export { ENV, User, Location, Database };
+export { ENV, User, Location, Weather, Database };

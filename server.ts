@@ -1,6 +1,7 @@
 import cors from "cors";
 import express from "express";
 import { ENV, Database } from "./config";
+import UserRouter from "./routes/user.route";
 import { handleErrors } from "./middleware/log.error";
 
 const initServer = (port: number) => {
@@ -17,16 +18,17 @@ const initServer = (port: number) => {
     // Swagger Documentation
 
     // API Routes
+    app.use("/users", UserRouter);
 
     // Global Error Catcher
     app.use(handleErrors);
 
     app.listen(port, async () => {
         // Connecting to the MongoDB Database
-        await mongoDB.connectDB();
+        if (!mongoDB.isConnected()) await mongoDB.connectDB();
 
         console.log(
-            `\nHTTP server running on port ${port}.\n\nAPI documentation available at http://localhost:${port}/api-docs`
+            `\nServer running on port ${port}.\n\nAPI documentation available at http://localhost:${port}/api-docs`
         );
     });
 
@@ -38,7 +40,7 @@ const serverShutDown = async (mongoDB: Database) => {
     console.log(`\nServer shutting down...`);
 
     // Disconnect from the MongoDB Database
-    await mongoDB.disconnectDB();
+    if (mongoDB.isConnected()) await mongoDB.disconnectDB();
 
     process.exit(0);
 };
